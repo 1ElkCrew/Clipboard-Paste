@@ -153,6 +153,7 @@
             this.listBox_main.TabIndex = 1;
             this.listBox_main.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_main_DragDrop);
             this.listBox_main.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_main_DragEnter);
+            this.listBox_main.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_main_MouseDoubleClick);
             // 
             // Main
             // 

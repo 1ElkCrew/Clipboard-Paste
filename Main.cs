@@ -102,5 +102,10 @@ namespace Clipboard_Paste_v2 {
         private void Main_Activated(object sender, EventArgs e) {
             addLinesToMainList(currentFileLocation);
         }
+
+        private void listBox_main_MouseDoubleClick(object sender, MouseEventArgs e) {
+            Clipboard.SetText(listBox_main.SelectedItem.ToString());
+            // TODO: timer for "Copied!" text to appear and disappear
+        }
     }
 }
