@@ -25,11 +25,17 @@
         private void InitializeComponent() {
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMainItem_file = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMainItem_fileNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMainItem_fileNewFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMainItem_fileNewEntry = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMainItem_fileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMainItem_fileEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMainItem_fileLocation = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMainItem_fileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMainItem_clipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMainItem_clipboardClear = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox_main = new System.Windows.Forms.ListBox();
             this.toolStripMainItem_clipboardCurrent = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBox_main = new System.Windows.Forms.ListBox();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,18 +57,62 @@
             // toolStripMainItem_file
             // 
             this.toolStripMainItem_file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMainItem_fileOpen});
+            this.toolStripMainItem_fileNew,
+            this.toolStripMainItem_fileOpen,
+            this.toolStripMainItem_fileEdit,
+            this.toolStripMainItem_fileLocation,
+            this.toolStripMainItem_fileExit});
             this.toolStripMainItem_file.Name = "toolStripMainItem_file";
             this.toolStripMainItem_file.Padding = new System.Windows.Forms.Padding(0);
             this.toolStripMainItem_file.Size = new System.Drawing.Size(29, 24);
             this.toolStripMainItem_file.Text = "File";
             // 
+            // toolStripMainItem_fileNew
+            // 
+            this.toolStripMainItem_fileNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMainItem_fileNewFile,
+            this.toolStripMainItem_fileNewEntry});
+            this.toolStripMainItem_fileNew.Name = "toolStripMainItem_fileNew";
+            this.toolStripMainItem_fileNew.Size = new System.Drawing.Size(173, 22);
+            this.toolStripMainItem_fileNew.Text = "New";
+            // 
+            // toolStripMainItem_fileNewFile
+            // 
+            this.toolStripMainItem_fileNewFile.Name = "toolStripMainItem_fileNewFile";
+            this.toolStripMainItem_fileNewFile.Size = new System.Drawing.Size(110, 22);
+            this.toolStripMainItem_fileNewFile.Text = "File...";
+            // 
+            // toolStripMainItem_fileNewEntry
+            // 
+            this.toolStripMainItem_fileNewEntry.Name = "toolStripMainItem_fileNewEntry";
+            this.toolStripMainItem_fileNewEntry.Size = new System.Drawing.Size(110, 22);
+            this.toolStripMainItem_fileNewEntry.Text = "Entry...";
+            this.toolStripMainItem_fileNewEntry.Click += new System.EventHandler(this.toolStripMainItem_fileNewEntry_Click);
+            // 
             // toolStripMainItem_fileOpen
             // 
             this.toolStripMainItem_fileOpen.Name = "toolStripMainItem_fileOpen";
-            this.toolStripMainItem_fileOpen.Size = new System.Drawing.Size(103, 22);
+            this.toolStripMainItem_fileOpen.Size = new System.Drawing.Size(173, 22);
             this.toolStripMainItem_fileOpen.Text = "Open";
             this.toolStripMainItem_fileOpen.Click += new System.EventHandler(this.toolStripMainItem_fileOpen_Click);
+            // 
+            // toolStripMainItem_fileEdit
+            // 
+            this.toolStripMainItem_fileEdit.Name = "toolStripMainItem_fileEdit";
+            this.toolStripMainItem_fileEdit.Size = new System.Drawing.Size(173, 22);
+            this.toolStripMainItem_fileEdit.Text = "Edit";
+            // 
+            // toolStripMainItem_fileLocation
+            // 
+            this.toolStripMainItem_fileLocation.Name = "toolStripMainItem_fileLocation";
+            this.toolStripMainItem_fileLocation.Size = new System.Drawing.Size(173, 22);
+            this.toolStripMainItem_fileLocation.Text = "Open File Location";
+            // 
+            // toolStripMainItem_fileExit
+            // 
+            this.toolStripMainItem_fileExit.Name = "toolStripMainItem_fileExit";
+            this.toolStripMainItem_fileExit.Size = new System.Drawing.Size(173, 22);
+            this.toolStripMainItem_fileExit.Text = "Exit";
             // 
             // toolStripMainItem_clipboard
             // 
@@ -76,9 +126,16 @@
             // toolStripMainItem_clipboardClear
             // 
             this.toolStripMainItem_clipboardClear.Name = "toolStripMainItem_clipboardClear";
-            this.toolStripMainItem_clipboardClear.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMainItem_clipboardClear.Size = new System.Drawing.Size(114, 22);
             this.toolStripMainItem_clipboardClear.Text = "Clear";
             this.toolStripMainItem_clipboardClear.Click += new System.EventHandler(this.toolStripMainItem_clipboardClear_Click);
+            // 
+            // toolStripMainItem_clipboardCurrent
+            // 
+            this.toolStripMainItem_clipboardCurrent.Name = "toolStripMainItem_clipboardCurrent";
+            this.toolStripMainItem_clipboardCurrent.Size = new System.Drawing.Size(114, 22);
+            this.toolStripMainItem_clipboardCurrent.Text = "Current";
+            this.toolStripMainItem_clipboardCurrent.Click += new System.EventHandler(this.toolStripMainItem_clipboardCurrent_Click);
             // 
             // listBox_main
             // 
@@ -97,13 +154,6 @@
             this.listBox_main.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_main_DragDrop);
             this.listBox_main.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_main_DragEnter);
             // 
-            // toolStripMainItem_clipboardCurrent
-            // 
-            this.toolStripMainItem_clipboardCurrent.Name = "toolStripMainItem_clipboardCurrent";
-            this.toolStripMainItem_clipboardCurrent.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMainItem_clipboardCurrent.Text = "Current";
-            this.toolStripMainItem_clipboardCurrent.Click += new System.EventHandler(this.toolStripMainItem_clipboardCurrent_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +165,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Clipboard Paste";
+            this.Activated += new System.EventHandler(this.Main_Activated);
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
@@ -132,6 +183,12 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_clipboardClear;
         private System.Windows.Forms.ListBox listBox_main;
         private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_clipboardCurrent;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileNew;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileNewFile;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileNewEntry;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileEdit;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileLocation;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileExit;
     }
 }
 
