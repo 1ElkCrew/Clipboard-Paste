@@ -33,13 +33,11 @@ namespace Clipboard_Paste_v2 {
         private void toolStripMainItem_fileOpen_Click(object sender, EventArgs e) {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.InitialDirectory = currentFileLocation;
-            string name;
             if (fileDialog.ShowDialog() == DialogResult.OK) {
-                name = fileDialog.FileName;
-                addLinesToMainList(name);
-                Settings.Default.FileLocation = name;
+                addLinesToMainList(fileDialog.FileName);
+                Settings.Default.FileLocation = fileDialog.FileName;
                 Settings.Default.Save();
-                currentFileLocation = name;
+                currentFileLocation = fileDialog.FileName;
             }
         }
 
