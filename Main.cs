@@ -20,7 +20,7 @@ namespace Clipboard_Paste_v2 {
         private void Main_Load(object sender, EventArgs e) {
             if (currentFileLocation != "") {
                 addLinesToMainList(currentFileLocation);
-            }
+            } // First load management
             else {
                 File.CreateText(AppDomain.CurrentDomain.BaseDirectory + "default.txt");
                 Settings.Default.FileLocation = AppDomain.CurrentDomain.BaseDirectory + "default.txt";
@@ -29,6 +29,7 @@ namespace Clipboard_Paste_v2 {
             }
         }
 
+        /** Open function from the File toolstrip **/
         private void toolStripMainItem_fileOpen_Click(object sender, EventArgs e) {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.InitialDirectory = currentFileLocation;
@@ -42,12 +43,14 @@ namespace Clipboard_Paste_v2 {
             }
         }
 
+        /** List control **/
         private void addLinesToMainList(string filepath) {
             listBox_main.Items.Clear();
             List<string> list_pastas = new List<string>(File.ReadAllLines(filepath));
             listBox_main.Items.AddRange(list_pastas.ToArray());
         }
 
+        /** Drag & Drop functionality support **/
         private void listBox_main_DragDrop(object sender, DragEventArgs e) {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             if (files.Length == 1) {
