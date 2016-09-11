@@ -18,6 +18,7 @@ namespace Clipboard_Paste_v2 {
         // must be called with Main.FUNCTION()
         public Main() {
             InitializeComponent();
+            /*listBox_main.MouseUp += new MouseEventHandler(this.listBox_main_RightClick);*/
             //instance = this; // global voids
         }
         public string currentFileLocation = Settings.Default.FileLocation;
@@ -114,5 +115,27 @@ namespace Clipboard_Paste_v2 {
             lb_copied.Visible = false;
             timer_Copied.Stop();
         }
+
+        private void toolStripMainItem_fileEdit_Click(object sender, EventArgs e) {
+            if (listBox_main.SelectedItems.Count == 1) {
+                FormEditEntry f = new FormEditEntry();
+                f.currentFileLocation = currentFileLocation;
+                f.stringToEdit = listBox_main.SelectedItem.ToString();
+                f.selectedListIndex = listBox_main.SelectedIndex;
+                f.Show();
+            }
+        }
+
+        /*
+        private void listBox_main_RightClick(object sender, MouseEventArgs e) {
+            if (e.Button == MouseButtons.Right) {
+                int index = listBox_main.IndexFromPoint(e.Location);
+                if (index != ListBox.NoMatches) {
+                    listBox_main.Items[index];
+                }
+            }
+        }
+        */
+        //TODO: make context menu strip usable
     }
 }

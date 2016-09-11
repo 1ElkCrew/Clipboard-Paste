@@ -39,7 +39,12 @@
             this.listBox_main = new System.Windows.Forms.ListBox();
             this.timer_Copied = new System.Windows.Forms.Timer(this.components);
             this.lb_copied = new System.Windows.Forms.Label();
+            this.rightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.rightClickMenu_New = new System.Windows.Forms.ToolStripMenuItem();
+            this.rightClickMenu_Edit = new System.Windows.Forms.ToolStripMenuItem();
+            this.rightClickMenu_Delete = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
+            this.rightClickMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -104,6 +109,7 @@
             this.toolStripMainItem_fileEdit.Name = "toolStripMainItem_fileEdit";
             this.toolStripMainItem_fileEdit.Size = new System.Drawing.Size(173, 22);
             this.toolStripMainItem_fileEdit.Text = "Edit";
+            this.toolStripMainItem_fileEdit.Click += new System.EventHandler(this.toolStripMainItem_fileEdit_Click);
             // 
             // toolStripMainItem_fileLocation
             // 
@@ -175,6 +181,33 @@
             this.lb_copied.Text = "Copied!";
             this.lb_copied.Visible = false;
             // 
+            // rightClickMenu
+            // 
+            this.rightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rightClickMenu_New,
+            this.rightClickMenu_Edit,
+            this.rightClickMenu_Delete});
+            this.rightClickMenu.Name = "rightClickMenu";
+            this.rightClickMenu.Size = new System.Drawing.Size(108, 70);
+            // 
+            // rightClickMenu_New
+            // 
+            this.rightClickMenu_New.Name = "rightClickMenu_New";
+            this.rightClickMenu_New.Size = new System.Drawing.Size(152, 22);
+            this.rightClickMenu_New.Text = "New";
+            // 
+            // rightClickMenu_Edit
+            // 
+            this.rightClickMenu_Edit.Name = "rightClickMenu_Edit";
+            this.rightClickMenu_Edit.Size = new System.Drawing.Size(152, 22);
+            this.rightClickMenu_Edit.Text = "Edit";
+            // 
+            // rightClickMenu_Delete
+            // 
+            this.rightClickMenu_Delete.Name = "rightClickMenu_Delete";
+            this.rightClickMenu_Delete.Size = new System.Drawing.Size(152, 22);
+            this.rightClickMenu_Delete.Text = "Delete";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +224,7 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
+            this.rightClickMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,6 +247,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileExit;
         private System.Windows.Forms.Timer timer_Copied;
         private System.Windows.Forms.Label lb_copied;
+        private System.Windows.Forms.ContextMenuStrip rightClickMenu;
+        private System.Windows.Forms.ToolStripMenuItem rightClickMenu_Edit;
+        private System.Windows.Forms.ToolStripMenuItem rightClickMenu_Delete;
+        private System.Windows.Forms.ToolStripMenuItem rightClickMenu_New;
     }
 }
 
