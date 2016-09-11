@@ -105,7 +105,14 @@ namespace Clipboard_Paste_v2 {
 
         private void listBox_main_MouseDoubleClick(object sender, MouseEventArgs e) {
             Clipboard.SetText(listBox_main.SelectedItem.ToString());
-            // TODO: timer for "Copied!" text to appear and disappear
+            lb_copied.Visible = true;
+            timer_Copied.Enabled = true;
+            timer_Copied.Start();
+        }
+
+        private void timer_Copied_Tick(object sender, EventArgs e) {
+            lb_copied.Visible = false;
+            timer_Copied.Stop();
         }
     }
 }

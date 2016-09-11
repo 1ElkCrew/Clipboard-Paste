@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMainItem_file = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMainItem_fileNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,6 +37,8 @@
             this.toolStripMainItem_clipboardClear = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMainItem_clipboardCurrent = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox_main = new System.Windows.Forms.ListBox();
+            this.timer_Copied = new System.Windows.Forms.Timer(this.components);
+            this.lb_copied = new System.Windows.Forms.Label();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,11 +158,29 @@
             this.listBox_main.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_main_DragEnter);
             this.listBox_main.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_main_MouseDoubleClick);
             // 
+            // timer_Copied
+            // 
+            this.timer_Copied.Interval = 1250;
+            this.timer_Copied.Tick += new System.EventHandler(this.timer_Copied_Tick);
+            // 
+            // lb_copied
+            // 
+            this.lb_copied.AutoSize = true;
+            this.lb_copied.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lb_copied.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.lb_copied.Location = new System.Drawing.Point(321, 0);
+            this.lb_copied.Name = "lb_copied";
+            this.lb_copied.Size = new System.Drawing.Size(83, 24);
+            this.lb_copied.TabIndex = 2;
+            this.lb_copied.Text = "Copied!";
+            this.lb_copied.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 572);
+            this.Controls.Add(this.lb_copied);
             this.Controls.Add(this.listBox_main);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
@@ -190,6 +211,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileEdit;
         private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileLocation;
         private System.Windows.Forms.ToolStripMenuItem toolStripMainItem_fileExit;
+        private System.Windows.Forms.Timer timer_Copied;
+        private System.Windows.Forms.Label lb_copied;
     }
 }
 
